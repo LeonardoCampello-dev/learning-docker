@@ -4,12 +4,13 @@ FROM node
 # Defining working directory
 WORKDIR /application
 
-
-COPY . /application
+COPY package.json /application
 
 RUN echo 'installing dependencies'
 
-RUN npm install 
+RUN npm install
+
+COPY . /application
 
 EXPOSE 80
 
