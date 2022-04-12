@@ -1,0 +1,2 @@
+- [Command to inspect an image:](https://docs.docker.com/engine/reference/commandline/image_inspect/)
+  - `docker image inspect <image_id>`
