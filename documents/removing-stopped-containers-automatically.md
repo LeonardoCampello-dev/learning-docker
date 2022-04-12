@@ -1,0 +1,2 @@
+- To remove a stopped container automatically, you must add the `--rm` flag in the container's run command:
+  - `docker run -p 3000:80 -d --rm <container_id>`
