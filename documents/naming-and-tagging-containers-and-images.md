@@ -24,4 +24,4 @@
 - `docker build -t goals:latest .`
   - > goals latest 22be254ee00b 23 hours ago 949MB
 
-`docker run -p 3000:80 -d --rm --name goals-app goals:latest `
+`docker run -p 3000:80 -d --rm --name goals-app goals:latest`
