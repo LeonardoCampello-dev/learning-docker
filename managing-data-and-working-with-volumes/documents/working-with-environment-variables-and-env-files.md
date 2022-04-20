@@ -7,6 +7,28 @@ Docker supports build-time ARGuments and runtime ENVironment variables
 - Available inside of Dockerfile, NOT accessible in CMD or any application code
 - Set on image build (**docker builld**) via `--build-arg`
 
+- Example
+
+```dockerfile
+FROM node:14
+
+WORKDIR /application
+
+COPY package.json .
+
+RUN npm install
+
+COPY . .
+
+ARG DEFAULT_PORT=80
+
+ENV PORT $DEFAULT_PORT
+
+EXPOSE $PORT
+
+CMD ["npm", "start"]
+```
+
 ### ENV
 
 - Available inside of Dockerfile & in application code
@@ -15,6 +37,10 @@ Docker supports build-time ARGuments and runtime ENVironment variables
 - Example in Dockerfile
 
 ```docker
+docker build -t feedback-app:dev --build-arg DEFAULT_PORT=5000 .
+```
+
+```dockerfile
 FROM node:14
 
 WORKDIR /application
